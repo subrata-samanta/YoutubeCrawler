@@ -123,6 +123,8 @@ def main(keyword, download_path, csv_file_path):
 
     # Search and download videos
     video_details_df = youtube_client.search_videos_by_keyword(keyword, max_results)
+    print(video_details_df.shape)
+
     downloader.download_videos(video_details_df)
 
     # Fetch comments for each video
@@ -137,6 +139,8 @@ def main(keyword, download_path, csv_file_path):
 
 
 if __name__ == "__main__":
+        
+
     keywords = [
         "emotional video", "sad video", "breakup video", "depression video", "lost hope",
         "anxiety relief video", "stress relief video", "overcoming loneliness", "coping with grief",
