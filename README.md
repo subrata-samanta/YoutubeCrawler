@@ -63,7 +63,7 @@ All file paths and settings can be modified in the `__main__` block:
 download_path = "C:\\downloads"
 csv_file_path = os.path.join(download_path, f"youtube_video_comments-{keyword}.csv")
 
-# Example Workflow
+## Example Workflow
 
 ### Search and Download
 The program searches for videos based on a provided list of keywords. For each keyword, it retrieves video details from YouTube and downloads the videos in the highest resolution available.
