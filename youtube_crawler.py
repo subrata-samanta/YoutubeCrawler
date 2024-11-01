@@ -144,8 +144,9 @@ if __name__ == "__main__":
         "mindfulness and peace"
     ]
 
-    download_path = "C:\\downloads"
+    
     for keyword in keywords:
+        download_path = f"C:\\downloads\\{keyword}"
         print(f"Processing keyword: {keyword}")
         csv_file_path = os.path.join(download_path, f"youtube_video_comments-{keyword}.csv")
         main(keyword, download_path, csv_file_path)
