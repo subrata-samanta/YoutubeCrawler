@@ -62,6 +62,7 @@ class VideoDownloader:
         """Download a list of YouTube videos based on the DataFrame of video details."""
         for video in video_details['watch_url']:
             self.download_video(video)
+            time.sleep(5)
 
 
 class CommentFetcher:
@@ -118,7 +119,7 @@ def main(keyword, download_path, csv_file_path):
     youtube_client = YouTubeClient()
     downloader = VideoDownloader(download_path)
     comment_fetcher = CommentFetcher(youtube_client)
-    max_results = 1
+    max_results = 100
 
     # Search and download videos
     video_details_df = youtube_client.search_videos_by_keyword(keyword, max_results)
@@ -149,7 +150,14 @@ if __name__ == "__main__":
     
     for keyword in keywords:
         download_path = f"C:\\downloads\\{keyword}"
-        print(f"Processing keyword: {keyword}")
+        print('*' * 150)
+        print('*' * 150)
+        print(f"Processing keyword ------------>>>>>>> : {keyword}")
         csv_file_path = os.path.join(download_path, f"youtube_video_comments-{keyword}.csv")
-        main(keyword, download_path, csv_file_path)
-        time.sleep(5)
+        try:
+            main(keyword, download_path, csv_file_path)
+        except Exception as e:
+            print(f"Error occured : {e}")
+        print('*' * 150)
+        print('*' * 150)
+            
