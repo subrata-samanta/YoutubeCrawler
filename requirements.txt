@@ -1,4 +1,5 @@
-google-api-python-client
-python-dotenv
-ytubefix
-pandas
+google-api-python-client==2.151.0
+python-dotenv==1.0.1
+pytubefix==8.2.0
+pandas==2.0.3
+emoji==2.14.0
