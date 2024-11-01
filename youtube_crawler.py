@@ -6,6 +6,7 @@ import pandas as pd
 import os
 import emoji
 from dotenv import load_dotenv
+import time
 
 load_dotenv()  # Load environment variables
 
@@ -36,7 +37,8 @@ class YouTubeClient:
                 "watch_url": video.watch_url,
                 "views": video.views,
                 "likes": video.likes,
-                "keywords": video.keywords
+                "keywords": video.keywords,
+                "description": video.description
             }
             for video in results.shorts[:max_results]
         ]
@@ -150,3 +152,4 @@ if __name__ == "__main__":
         print(f"Processing keyword: {keyword}")
         csv_file_path = os.path.join(download_path, f"youtube_video_comments-{keyword}.csv")
         main(keyword, download_path, csv_file_path)
+        time.sleep(5)
