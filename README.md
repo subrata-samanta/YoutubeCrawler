@@ -59,7 +59,6 @@ A Python-based tool for searching, downloading, and analyzing mental health-rela
 ## Configuration
 
 All file paths and settings can be modified in the `__main__` block:
-```python
 download_path = "C:\\downloads"
 csv_file_path = os.path.join(download_path, f"youtube_video_comments-{keyword}.csv")
 
